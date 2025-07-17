@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+</head>
+<body>
+    <div id="container">
+        <header id="hd">
+            <section class="hd__sect" id="hd__sect0">
+                <a href="#" onclick="showSection('about')">About Me</a>
+            </section>
+            <section class="hd__sect" id="hd__sect1">
+                <a href="#" onclick="showSection('skills')">Skills</a>
+            </section>
+            <section class="hd__sect" id="hd__sect2">
+                <a href="#" onclick="showSection('contacts')">Contact's</a>
+            </section>
+        </header>
+        <main id="m">
+            <section class="cv" id="about">
+                <h2 class="n">About Me...</h2>
+                <img src="/fff82686c6fe583253ddd8411980c5e1.jpg" alt="image of me" width=200px class="img" >
+                <br>
+                <span>
+                    <p>Hello EveryBody , I am</p>
+                    <strong><h1>Romisaa Ahmed</h1></strong>
+                    <p>I am a student at Engineering of Al-Azher Universtiy</p>
+                    <p>and I am interested in Web Developer Field </p>
+                </span>
+            </section>
+            <section class="cv" id="skills">
+                <p><h3>I am interested in Web Developer Field </h3></p>
+                <p><h4>SO... iam learning </h4></p>
+                <ul>
+                    <li>HTML -Advanced</li>
+                    <li>CSS-Good Understanding</li>
+                    <li>JS -Currently Learning</li>
+                    <li>Git&GitHub -Basics</li>
+                </ul>
+            </section>
+            <section class="cv" id="contacts">
+                <div class="iqons">
+                    <p>Telephone:<a href="tel:01285308090" title="call me"><i class="fas fa-phone"></i></a></p>
+                    <p>Email:<a href="mailto:Roma@gmail.com" title="mail me"><i class="fas fa-envelope"></i></a></p>
+                    <p>linkedin: <a href="https://www.linkedin.com/in/romisaa-ahmed-elhoseny-6627aa326?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"title="linkedin"><i class="fab fa-linkedin"></i></a></p>
+                </div>
+            </section>
+        </main>
+        <aside id="sd"></aside>
+        <footer id="ft">
+            <p><strong>&copy; ROMISAA AHMED 2025...</strong></p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            function showSection(id, e) {
+                e.preventDefault();
+                document.querySelectorAll('.cv').forEach(section => {
+                    section.classList.remove('show');
+                });
+                document.getElementById(id).classList.add('show');
+    }
+
+    // تعيين الأحداث
+        document.querySelector('#hd__sect0 a').onclick = (e) => showSection('about', e);
+        document.querySelector('#hd__sect1 a').onclick = (e) => showSection('skills', e);
+        document.querySelector('#hd__sect2 a').onclick = (e) => showSection('contacts', e);
+
+    // العرض الافتراضي
+        document.getElementById('about').classList.add('show');
+});
+    </script>    
+</body>
+</html>
